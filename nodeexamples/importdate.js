@@ -1,0 +1,11 @@
+var httpvariable =require('http')
+var curdate=require('./datelib')
+var myserver=httpvariable.createServer(function(request,response){
+    response.writeHead(200,{'Content-Type':'text/html'})
+    response.write("hello from node server for importing date")
+    response.write("<br>")
+    var cd=curdate.myDate()
+    response.write(cd)
+    response.end()
+})
+myserver.listen(8888)
